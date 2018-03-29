@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>我的任务</title>
+  <style>
+    /*CSS格式化*/
+
+    /*清除内外边距*/
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    /*设置 字体大小  字体*/
+
+    body {
+      font-size: 14px;
+      font-family: arial, "Microsoft YaHei", sans-serif;
+      color: #333;
+    }
+
+    /*清除H标签的加粗效果*/
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-weight: 400;
+    }
+
+    /*清除li的小点点*/
+
+    li {
+      list-style: none;
+    }
+
+    /*设置a的字体大小 颜色  清除点击下划线*/
+
+    a {
+      font-size: 18px;
+      color: blue;
+      text-decoration: none;
+    }
+
+    /*设置a标签点击变色*/
+
+    a:hover {
+      color: #000;
+    }
+
+    /*清除图片的边框, 设置图片对齐方式*/
+
+    img {
+      border: 0 none;
+      vertical-align: middle;
+    }
+
+    /*设置表单的样式 边框 样式 文本域不缩放*/
+
+    input,
+    button,
+    textarea {
+      border: 0 none;
+      outline-style: none;
+      resize: none;
+
+    }
+
+    /*设置浮动*/
+
+    .fl {
+      float: left;
+    }
+
+    .fr {
+      float: right;
+    }
+
+    /* 清除浮动 */
+
+    .clearfix:before,
+    .clearfix:after {
+      content: "";
+      display: table;
+      visibility: hidden;
+      height: 0;
+      line-height: 0;
+    }
+
+    .clearfix:after {
+      clear: both;
+    }
+
+    /* 布局 */
+
+    body {
+      background-color: #f5f5f5;
+    }
+
+    .layout {
+      width: 480px;
+    }
+
+    .tit {
+      background-color: #fff;
+      width: 100%;
+      text-align: center;
+      margin: 0 auto;
+      height: 40px;
+      line-height: 40px;
+    }
+
+    .tit a {
+      float: left;
+      margin-left: 20px;
+    }
+
+    .tit h1 {
+      font: 800;
+    }
+
+    .tit span {
+      float: right;
+      margin-right: 20px;
+    }
+
+    #tag {
+      margin-top: 5px;
+      width: 100%;
+      background-color: #fff;
+      height: 50px;
+      line-height: 50px;
+    }
+
+    #tag li {
+      float: left;
+      display: block;
+      width: 50%;
+      text-align: center;
+    }
+
+    .content {
+      width: 100%;
+    }
+
+    .content li {
+      margin-top: 5px;
+      padding-left: 30px;
+      display: block;
+      height: 100px;
+      background-color: #fff;
+      position: relative;
+    }
+
+    .content li i {
+      width: 20px;
+      height: 100px;
+      line-height: 30px;
+      background-color: blue;
+      color: #fff;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .content li h4 {
+      height: 60px;
+      line-height: 60px;
+      font-size: 24px;
+      font-weight: 800;
+
+    }
+
+    .content li p {
+      color: #999;
+    }
+
+    .content li span {
+      float: right;
+      margin-right: 50px;
+    }
+
+    .cententli {
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="layout">
+    <div class="tit">
+      <a href="javescript:;">
+        < 返回</a>
+          <span>图标</span>
+          <span>图标</span>
+          <h1>我的任务</h1>
+
+    </div>
+
+    <ul class="toggle clearfix" id="tag">
+      <li>
+        <a href="javrscript:;" class="unfinish">待办(28)</a>
+      </li>
+      <li>
+        <a href="javrscript:;" class="finish">已办(12)</a>
+      </li>
+    </ul>
+    <div class=" clearfix">
+      <ul class='content'>
+        <!--  <li class='cententli'>
+          <i>未开始</i>
+          <h4>220KV西上 - 1# -49 巡视任务</h4>
+          <p>负责人: 张大江
+            <span>2017/03/11</span>
+          </p>
+        </li> -->
+      </ul>
+    </div>
+  </div>
+  <script>
+    var dataArr = [{
+        id: 0,
+        state: '已完成',
+        content: '220KV西上 - 1# - 49 巡视任务',
+        charge: '张大江',
+        date: '2017/03/16'
+      },
+      {
+        id: 1,
+        state: '未完成',
+        content: '220KV西上 - 1# - 49 巡视任务',
+        charge: '张大江',
+        date: '2017/03/16'
+      },
+      {
+        id: 2,
+        state: '未完成',
+        content: '220KV西上 - 1# - 49 巡视任务',
+        charge: '张大江',
+        date: '2017/03/16'
+      },
+      {
+        id: 3,
+        state: '已完成',
+        content: '220KV西上 - 1# - 49 巡视任务',
+        charge: '张大江',
+        date: '2017/03/16'
+      },
+      {
+        id: 4,
+        state: '未完成',
+        content: '220KV西上 - 1# - 49 巡视任务',
+        charge: '张大江',
+        date: '2017/03/16'
+      },
+      {
+        id: 5,
+        state: '未完成',
+        content: '220KV西上 - 1# - 49 巡视任务',
+        charge: '张大江',
+        date: '2017/03/16'
+      },
+      {
+        id: 6,
+        state: '未完成',
+        content: '220KV西上 - 1# - 49 巡视任务',
+        charge: '张大江',
+        date: '2017/03/16'
+      },
+      {
+        id: 7,
+        state: '未完成',
+        content: '220KV西上 - 1# - 49 巡视任务',
+        charge: '张大江',
+        date: '2017/03/16'
+      }
+    ];
+
+
+    window.onload = function () {
+      var content = document.querySelector('.content');
+      bindHtml(dataArr);
+
+      var unfinish = document.querySelector('.unfinish'),
+        finish = document.querySelector('.finish'),
+        all = document.querySelector('h1');
+
+      // 点击待办
+      unfinish.onclick = function () {
+        var data = [];
+        for (var i = 0; i < dataArr.length; i++) {
+          if (dataArr[i].state == '未完成') {
+            data.push(dataArr[i]);
+          }
+        }
+        bindHtml(data);
+      }
+
+      // 点击已办
+      finish.onclick = function () {
+        var data = [];
+        for (var i = 0; i < dataArr.length; i++) {
+          if (dataArr[i].state == '已完成') {
+            data.push(dataArr[i]);
+          }
+        }
+        bindHtml(data);
+      }
+
+      // 点击我的任务
+      all.onclick = function () {
+        bindHtml(dataArr);
+      }
+
+      // 功能函数 -- 根据传递进来的数据渲染页面
+      function bindHtml(data) {
+        var str = '';
+        for (var i = 0; i < data.length; i++) {
+          str += '<li><i>' + data[i].state + '</i><h4>' + data[i].content + '</h4><p>负责人: ' + data[i].charge +
+            '<span>' + data[i].date + '</span></p>'
+        }
+        content.innerHTML = str;
+      }
+    }
+  </script>
+</body>
+
+</html>
