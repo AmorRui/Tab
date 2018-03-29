@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>..........</title>
+  <!-- <style>
+  .layout {
+  display: flex;
+  }
+  .content{
+        flex:1;
+        height:100px;
+   }
+   .left,.right{
+        height:100px;
+        background:blue;
+        flex:0 0 100px;/* 左右两列固定宽 */
+   }
+
+  </style> -->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .wrap {
+      width: 500px;
+      margin: 10px auto;
+    }
+
+    #tag {
+      width: 498px;
+      overflow: hidden;
+      background: #000;
+      border: 1px solid #000;
+    }
+
+    #tag li {
+      list-style: none;
+      float: left;
+      margin-right: 0px;
+      color: white;
+      padding: 5px 20px;
+      cursor: pointer;
+    }
+
+    #tag .current {
+      color: #000;
+      background: #ccc;
+    }
+
+    #tagContent div {
+      width: 498px;
+      border: 1px solid #000;
+      border-top: none;
+      height: 300px;
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 
+  <div class="layout">
+    <div class="left"></div>
+    <div class="content"></div>
+    <div class="right"></div>
+  </div> -->
+  <!-- <ul>
+    <li>12345</li>
+    <li>12345</li>
+    <li>12345</li>
+    <li>12345</li>
+    <li>12345</li>
+    <li>12345</li>
+    <li>12345</li>
+    <li>12345</li>
+    <li>12345</li>
+    <li>12345</li>
+  </ul> -->
+  <div class="wrap">
+    <ul id="tag">
+      <li class="current">标签一</li>
+      <li>标签二</li>
+      <li>标签三</li>
+    </ul>
+    <div id="tagContent">
+      <div> 内容一
+        <br>内容一 </div>
+      <div> 内容二
+        <br>内容二 </div>
+      <div> 内容三
+        <br>内容三 </div>
+    </div>
+  </div>
+  <script>
+    // tab 栏
+
+    window.onload = function () {
+      var tag = document.getElementById("tag").children; 
+      var content = document.getElementById("tagContent").children; 
+      content[0].style.display = "block"; 
+      var len = tag.length;
+      for (var i = 0; i < len; i++) {
+        tag[i].index = i; 
+        tag[i].onclick = function () {
+          for (var n = 0; n < len; n++) {
+            tag[n].className = "";
+            content[n].style.display = "none";
+          } 
+          tag[this.index].className = "current";
+          content[this.index].style.display = "block";
+        }
+      }
+    }
+
+
+
+
+
+    // 隔行变色
+    // var lis = document.getElementsByTagName("li");
+    // for (var i = 0; i < lis.length; i++) {
+    //   if (i % 2 == 0) {
+    //     lis[i].style.backgroundColor = 'red';
+    //   } else {
+    //     lis[i].style.backgroundColor = 'yellow';
+    //   }
+    // }
+
+
+
+
+    // console.log(  "<tr><td>{$id}</td><td>{$id}_{$name}</td></tr>".replace(/{\$id}/g, '10').replace(/{\$name}/g, 'Tony'))
+
+
+    // var arr = [3,6,2,4,1,5]; 
+
+    // console.log(arr.reverse());
+
+    // console.log(arr.sort(function(a,b){return (a-b)}));
+
+
+    // function aaa(o) {
+    // var arr = o.split('-');
+    // for(var i = 0 ; i <arr.length; i++){
+    //   arr[i]=arr[i].charAt(0).toUpperCase()+arr[i].substr(1,arr[i].length-1);
+    //   // arr[i]=arr[i].charAt(0).toUpperCase()+arr[i].substr(1,arr[i].length-1);
+    // }
+    // o =arr.join('');
+    // return o;
+    // }
+
+    // var arr = 'fhj-jhjvfhb-hjvn';
+    // alert(aaa(arr));
+
+
+    // function obj(e){
+    //   var arr = e.split('-');
+    //   for(var i =0; i < arr.length;i++){
+    //     arr[i] = arr[i].charAt(0).toUpperCase()+arr[i].substr(1,arr[i].length-1);
+    //   }
+    //   e=arr.join('');
+    //   return e;
+    // }
+    // var qwre = 'fvjk-vj kv-hjv';
+    // console.log(obj(qwre));
+
+    // var stringArray = ["This", "is", "baodu"];
+    // alert(stringArray.join(""));
+
+
+
+
+
+    // var inp = document.getElementById("inp");
+    // var btn = document.getElementsByTagName('button')[0];
+    // inp.onclick = function (){
+    //   // alert('1234');
+    //   console.log("o8")
+    // }
+    // btn.addEventListener("click",function(){
+    //   // alert('124');
+    //   console.log('1243')
+    // });
+
+
+
+    //  var lista = document.getElementsByTagName('input');
+    //  var checkouts = [];
+    //  var len = lista.length;
+    //  while(len--){
+    //    if(lista[len].type === 'text'){
+    //      checkouts.push(lista[len]);
+    //    }
+    //  }
+    //  console.log(checkouts);
+
+
+    // var diva = document.getElementById('div');
+    // diva.innerHTML = '123';
+    // diva.style.color = 'red';
+  </script>
+</body>
+
+</html>
