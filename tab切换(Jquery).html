@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>tab切换</title>
+  <script src="./jquery-1.7.2.min.js"></script>
+  <style>
+    /*通用类*/
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-width: 1100px;
+      margin: 0 auto;
+      font-size: 12px;
+      font-family: "Microsoft Yahei";
+      color: #666;
+      background: #fbfbfb;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-weight: 500;
+    }
+
+    img {
+      border: none;
+    }
+
+    a {
+      cursor: pointer;
+      color: #666;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #468bf2;
+    }
+
+    ul {
+      list-style-type: none;
+    }
+
+    em {
+      font-style: normal;
+    }
+
+    .lt {
+      float: left;
+    }
+
+    .rt {
+      float: right;
+    }
+
+    input {
+      font-family: "Microsoft Yahei";
+      color: #666;
+    }
+
+    input.sub,
+    label {
+      border: none;
+      cursor: pointer;
+    }
+
+    div.clear {
+      font: 0px Arial;
+      line-height: 0;
+      height: 0;
+      overflow: hidden;
+      clear: both;
+    }
+
+    .container {
+      width: 1100px;
+      margin: 30px auto 0;
+    }
+
+    .container .mh {
+      width: 100%;
+      height: 20px;
+      border: 1px solid #222;
+    }
+
+    .container .mh .tab .tab_selected {
+      background-color: #f00;
+      color: #fff;
+    }
+
+    .container .mh li {
+      width: 100px;
+      height: 20px;
+      float: left;
+      text-align: center;
+      border-right: 1px solid #222;
+    }
+
+    .container .mc {
+      width: 100%;
+      height: 200px;
+      border: 1px solid #222;
+      border-top: none;
+    }
+
+    .container .mc .main {
+      display: none;
+    }
+
+    .container .mc .main_selected {
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="mh">
+      <ul class="tab">
+        <li class="tab_item tab_selected">1</li>
+        <li class="tab_item ">2</li>
+        <li class="tab_item ">3</li>
+        <li class="tab_item ">4</li>
+        <li class="tab_item ">5</li>
+      </ul>
+    </div>
+    <div class="mc">
+      <div class="main main_selected">
+        1111111111111111111111111111111
+      </div>
+      <div class="main">
+        22222222222222222222222
+      </div>
+      <div class="main">
+        33333333333333333333333
+      </div>
+      <div class="main">
+        444444444444444444
+      </div>
+      <div class="main">
+        55555555555555555555
+      </div>
+    </div>
+  </div>
+</body>
+<script>
+  $(function(){
+    $(".container .mh li").click(function () {
+      var $this = $(this);
+      var $index = $this.index();
+      $(".container .mh li").removeClass();
+      $this.addClass("tab_selected");
+
+
+     $(".container .mc .main").css("display", "none");
+     $(".container .mc .main").eq($index).css("display", "block");
+    })
+  })
+</script>
+</html>
